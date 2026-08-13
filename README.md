@@ -1,5 +1,5 @@
-# Foodie---Fast-food-website
-Foodie is a fully responsive fast food website, Responsive for all devices, build using HTML, CSS, and JavaScript.
+# Foodie Fast-food-website
+> Foodie is a fully functional fast-food restaurant website with a static HTML/CSS/JS frontend powered by a NestJS backend and a Neon PostgreSQL database. The frontend is wired end-to-end to a REST API (Swagger-documented) — the menu, category filters, and search load live products, "Order Now" adds items to a persistent cart with guest checkout, and the "Book a Table" forms create real reservations with booking numbers. Promo cards, testimonials, and blog posts are all rendered from the database, with image uploads served by the backend.
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=html" width="50"/>
@@ -15,6 +15,9 @@ Foodie is a fully responsive fast food website, Responsive for all devices, buil
 ### Demo Screeshots
 
 ![Foodie Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+
+### Live Demo
+[View Live Demo](https://darkfeed2005.github.io/Foodie---Fast-food-website/) 
 
 ### Prerequisites
 
@@ -44,24 +47,34 @@ If you want to contact with me you can reach me at [Github](https://www.github.c
 
 ## 🤝 Contributing
 
-```bash
-git checkout -b feature/AmazingFeature
-git commit -m "Add AmazingFeature"
-git push origin feature/AmazingFeature
-```
+Contributions are welcome! Here's how you can help:
 
-Guidelines:
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. **Commit your changes**
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. **Push to the branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. **Open a Pull Request**
 
-- Follow Java coding conventions.
-- Keep Swing updates on the EDT.
-- Add unit tests.
-- Update documentation.
+### Contribution Guidelines
 
----
+- Follow existing code style and conventions
+- Write clear commit messages
+- Update documentation as needed
+- Test your changes across browsers
+- Ensure responsive design is maintained
 
 ## 👨‍💻 Author
 
-- **GitHub:** https://github.com/darkfeed2005
-- **LinkedIn:** https://www.linkedin.com/in/kalana-yasassri-684591251/
-- **Instagram:** https://www.instagram.com/kalana_yasassri
+- **GitHub** <a href="https://github.com/darkfeed2005" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=github" alt="github" width="20" height="20"/> </a>
+- LinkedIn <a href="https://www.linkedin.com/in/kalana-yasassri-684591251/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" alt="linkedin" width="20" height="20"/> </a>
+- Instagram <a href="https://www.instagram.com/kalana_yasassri" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=instagram" alt="instagram" width="20" height="20"/> </a>
 
