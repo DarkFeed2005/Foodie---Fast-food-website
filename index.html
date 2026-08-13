@@ -16,6 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/app.css">
 
   <!-- 
     - google font link
@@ -79,7 +80,12 @@
           <ion-icon name="search-outline"></ion-icon>
         </button>
 
-        <button class="btn btn-hover">Reservation</button>
+        <button class="search-btn cart-btn" aria-label="Cart" data-cart-btn>
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+
+        <button class="btn btn-hover" data-reservation-open>Reservation</button>
 
         <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
           <span class="line top"></span>
@@ -136,7 +142,7 @@
 
             <p class="hero-text">Food is any substance consumed to provide nutritional support for an organism.</p>
 
-            <button class="btn">Book A Table</button>
+            <button class="btn" data-reservation-open>Book A Table</button>
 
           </div>
 
@@ -164,7 +170,7 @@
       <section class="section section-divider white promo">
         <div class="container">
 
-          <ul class="promo-list has-scrollbar">
+          <ul class="promo-list has-scrollbar" data-promo-list>
 
             <li class="promo-item">
               <div class="promo-card">
@@ -385,7 +391,7 @@
 
             </ul>
 
-            <button class="btn btn-hover">Order Now</button>
+            <button class="btn btn-hover order-now-scroll">Order Now</button>
 
           </div>
 
@@ -402,7 +408,7 @@
         - #FOOD MENU
       -->
 
-      <section class="section food-menu" id="food-menu">
+      <section class="section food-menu" id="food-menu" data-menu-scroll>
         <div class="container">
 
           <p class="section-subtitle">Popular Dishes</p>
@@ -415,31 +421,15 @@
             Food is any substance consumed to provide nutritional support for an organism.
           </p>
 
-          <ul class="fiter-list">
+          <ul class="fiter-list" data-filter-list>
 
             <li>
-              <button class="filter-btn  active">All</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Pizza</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Burger</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Drinks</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Sandwich</button>
+              <button class="filter-btn  active" data-filter="all">All</button>
             </li>
 
           </ul>
 
-          <ul class="food-menu-list">
+          <ul class="food-menu-list" data-menu-list>
 
             <li>
               <div class="food-menu-card">
@@ -707,7 +697,7 @@
               invasion of the 1120s, while it is also known that many restaurants were run by families.
             </p>
 
-            <button class="btn btn-hover">Order Now</button>
+            <button class="btn btn-hover order-now-scroll">Order Now</button>
           </div>
 
           <figure class="cta-banner">
@@ -746,7 +736,7 @@
               invasion of the 1120s, while it is also known that many restaurants were run by families.
             </p>
 
-            <button class="btn btn-hover">Order Now</button>
+            <button class="btn btn-hover order-now-scroll">Order Now</button>
           </div>
 
           <figure class="delivery-banner">
@@ -784,7 +774,7 @@
             support for an organism.
           </p>
 
-          <ul class="testi-list has-scrollbar">
+          <ul class="testi-list has-scrollbar" data-testi-list>
 
             <li class="testi-item">
               <div class="testi-card">
@@ -919,7 +909,7 @@
 
                   <p class="banner-text">Sale off 50% only this week</p>
 
-                  <button class="btn">Order Now</button>
+                  <button class="btn order-now-scroll">Order Now</button>
                 </div>
 
               </div>
@@ -936,7 +926,7 @@
 
                   <p class="banner-text">50% off Now</p>
 
-                  <button class="btn">Order Now</button>
+                  <button class="btn order-now-scroll">Order Now</button>
                 </div>
 
               </div>
@@ -953,7 +943,7 @@
 
                   <p class="banner-text">50% off Now</p>
 
-                  <button class="btn">Order Now</button>
+                  <button class="btn order-now-scroll">Order Now</button>
                 </div>
 
               </div>
@@ -970,7 +960,7 @@
 
                   <p class="banner-text">Sale off 50% only this week</p>
 
-                  <button class="btn">Order Now</button>
+                  <button class="btn order-now-scroll">Order Now</button>
                 </div>
 
               </div>
@@ -1004,7 +994,7 @@
             Food is any substance consumed to provide nutritional support for an organism.
           </p>
 
-          <ul class="blog-list">
+          <ul class="blog-list" data-blog-list>
 
             <li>
               <div class="blog-card">
@@ -1254,7 +1244,7 @@
 
         </ul>
 
-        <form action="" class="footer-form">
+        <form action="" class="footer-form" data-footer-booking-form>
 
           <p class="footer-list-title">Book a Table</p>
 
@@ -1286,6 +1276,8 @@
 
           <button type="submit" class="btn">Book a Table</button>
 
+          <p class="booking-result" data-footer-booking-result></p>
+
         </form>
 
       </div>
@@ -1316,6 +1308,194 @@
   </a>
 
 
+  <!-- 
+    - API offline notice
+  -->
+
+  <div class="api-notice" data-api-notice>
+    <ion-icon name="cloud-offline-outline"></ion-icon>
+    <span>Could not connect to the server. Showing saved content.</span>
+    <button type="button" class="retry-btn" data-retry-btn>Retry</button>
+  </div>
+
+
+  <!-- 
+    - #CART DRAWER
+  -->
+
+  <div class="cart-drawer" data-cart-drawer aria-label="Shopping cart">
+
+    <div class="cart-header">
+      <h3 class="h3">Your Cart</h3>
+      <button type="button" class="modal-close-btn" data-cart-close aria-label="Close cart">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </div>
+
+    <div class="cart-body" data-cart-body>
+      <div data-cart-items></div>
+    </div>
+
+    <div class="cart-footer" data-cart-summary>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span data-cart-total></span>
+      </div>
+      <button type="button" class="btn form-submit-btn" data-checkout-btn>Checkout</button>
+    </div>
+
+  </div>
+
+
+  <!-- 
+    - #RESERVATION MODAL
+  -->
+
+  <div class="modal-overlay" data-reservation-modal>
+    <div class="modal">
+
+      <div class="modal-header">
+        <h3 class="h3">Book a Table</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+
+      <form class="modal-form" data-reservation-form novalidate>
+        <div class="modal-error" data-reservation-error></div>
+        <label>Full Name <span>*</span></label>
+        <input type="text" name="fullName" class="input-field" required placeholder="Your Name">
+
+        <label>Email <span>*</span></label>
+        <input type="email" name="email" class="input-field" required placeholder="Email Address">
+
+        <div class="form-row">
+          <div>
+            <label>Total Person</label>
+            <select name="totalPerson" class="input-field">
+              <option value="1 person">1 Person</option>
+              <option value="2 person" selected>2 Person</option>
+              <option value="3 person">3 Person</option>
+              <option value="4 person">4 Person</option>
+              <option value="5 person">5 Person</option>
+              <option value="6+ person">6+ Person</option>
+            </select>
+          </div>
+          <div>
+            <label>Booking Date <span>*</span></label>
+            <input type="date" name="bookingDate" class="input-field" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label>Phone</label>
+            <input type="tel" name="phone" class="input-field" placeholder="Phone Number">
+          </div>
+          <div>
+            <label>Time</label>
+            <input type="time" name="bookingTime" class="input-field">
+          </div>
+        </div>
+
+        <label>Message</label>
+        <textarea name="message" class="input-field" rows="3" placeholder="Special requests"></textarea>
+
+        <button type="submit" class="btn form-submit-btn">Confirm Booking</button>
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- 
+    - #BLOG MODAL
+  -->
+
+  <div class="modal-overlay" data-blog-modal>
+    <div class="modal blog-modal">
+
+      <div class="modal-header">
+        <h3 class="h3">Blog Post</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+
+      <div class="blog-modal-body" data-blog-content></div>
+
+    </div>
+  </div>
+
+
+  <!-- 
+    - #CHECKOUT MODAL
+  -->
+
+  <div class="modal-overlay" data-checkout-modal>
+    <div class="modal">
+
+      <div class="modal-header">
+        <h3 class="h3">Checkout</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+
+      <div data-checkout-items class="cart-body" style="max-height: 180px; padding: 0 0 10px;"></div>
+
+      <form class="modal-form" data-checkout-form novalidate>
+
+        <div class="modal-error" data-checkout-error></div>
+
+        <div class="form-row">
+          <div>
+            <label>Full Name <span>*</span></label>
+            <input type="text" name="customerName" class="input-field" required placeholder="Your Name">
+          </div>
+          <div>
+            <label>Phone <span>*</span></label>
+            <input type="tel" name="phone" class="input-field" required placeholder="Phone Number">
+          </div>
+        </div>
+
+        <label>Email <span>*</span></label>
+        <input type="email" name="email" class="input-field" required placeholder="Email Address">
+
+        <label>Delivery Address <span>*</span></label>
+        <input type="text" name="address" class="input-field" required placeholder="Street, City">
+
+        <label>Payment Method</label>
+        <select name="paymentMethod" class="input-field">
+          <option value="cash_on_delivery" selected>Cash on Delivery</option>
+          <option value="card">Credit / Debit Card</option>
+          <option value="online">Online Payment</option>
+        </select>
+
+        <label>Order Notes</label>
+        <textarea name="note" class="input-field" rows="2" placeholder="Any special instructions"></textarea>
+
+        <div class="cart-total-row" style="margin-block: 6px 14px; display: block; line-height: 2;">
+          <span>Subtotal <em data-checkout-subtotal style="float: right; font-style: normal;">$0.00</em></span><br>
+          <span>Delivery fee <em data-checkout-delivery style="float: right; font-style: normal;">$2.50</em></span><br>
+          <span>Total <em data-checkout-total style="float: right; font-style: normal; color: var(--deep-saffron);">$0.00</em></span>
+        </div>
+
+        <button type="submit" class="btn form-submit-btn" data-place-order-btn>Place Order</button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- 
+    - toasts
+  -->
+
+  <div class="toast-container" data-toast-container></div>
+
+
 
 
 
@@ -1323,6 +1503,7 @@
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/app.js" defer></script>
 
   <!-- 
     - ionicon link
